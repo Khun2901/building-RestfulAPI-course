@@ -1,0 +1,124 @@
+swagger: "2.0"
+info: 
+  description: User API
+  version: 1.0.0
+  title: A User API
+host: localhost:3000
+basePath: /api/v1
+schemes: 
+  - http
+  
+tags:
+  - name: USER Details
+    description: Display details of users
+
+paths:
+  /users:
+    get:
+      tags:
+        - User
+      summary:
+        Retrieve all users
+      security: []
+    
+      responses:
+        '200':
+          description: Successful operation
+        
+    post: 
+      tags: 
+        - User
+      summary: 
+        Create a new user
+      parameters: 
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: string
+      responses: 
+        '201':
+          description: Successful operation
+          
+  /users/{userId}:
+    get: 
+      tags: 
+        - User
+      summary:
+        Retrieve a user by specified id
+      parameters: 
+        - in: path
+          name: userId
+          description: ID of user to be retrieved
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Successful Operation
+        '400':
+          description: Invalid userId 
+        '404':
+          description: User not found
+          
+    put: 
+      tags:
+        - User
+      summary:
+        Update user by specified id
+      parameters:
+        - in: path
+          name: userId
+          description: ID of the user to be updated
+          required: true
+          type: integer
+          format: int64
+        - in: body
+          name: body
+          description: User object to be updated
+          required: true
+          schema: 
+            type: string
+      responses:
+        '201': 
+          description: Successful Operation
+        '400':
+          description: Invalid userId
+        '404':
+          description: User not found
+          
+    delete: 
+      tags:
+        - User
+      summary:
+        Delete user by specified id
+      parameters:
+        - in: path
+          name: userId
+          description: ID of the user to be deleted
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200': 
+          description: Successful Operation
+        '400':
+          description: Invalid userId
+        '404':
+          description: User not found
+    
+          
+          
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
