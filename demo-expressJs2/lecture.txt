@@ -1,0 +1,7 @@
+1.  app.js use the entry point for the application and calls index.js for the routes
+2.  The index.js file references the user_router.js.
+3.  The user_router.js file contains all the routes.
+4.  users.json consists of data about the users.
+5.  UsersDAO.js performs all manipulation opertaions on the data.
+6.  UserService.js contains code to perform all business logic.
+7.  UserController.js handles incoming requests and returns responses. 
