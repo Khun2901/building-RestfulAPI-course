@@ -1,0 +1,108 @@
+swagger: "2.0"
+info: 
+  description: User API
+  version: 1.0.0
+  title: A User API
+host: localhost:8000
+basePath: /api/v1
+schemes: 
+  - http
+  
+tags:
+  - name: Movie Details
+    description: Display details of movies
+
+paths:
+  /movies:
+    get:
+      tags:
+        - Movie
+      summary:
+        Retrieve all movies
+      security: []
+    
+      responses:
+        '200':
+          description: Successful operation
+        
+    post: 
+      tags: 
+        - Movie
+      summary: 
+        Create a new movie
+      parameters: 
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: string
+      responses: 
+        '201':
+          description: Successful operation
+          
+  /movies/{movieId}:
+    get: 
+      tags: 
+        - Movie
+      summary:
+        Retrieve a movie by specified id
+      parameters: 
+        - in: path
+          name: movieId
+          description: ID of movie to be retrieved
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Successful Operation
+        '400':
+          description: Invalid movieId 
+        '404':
+          description: User not found
+          
+    patch: 
+      tags:
+        - Movie
+      summary:
+        Update partial movie details by specified id
+      parameters:
+        - in: path
+          name: movieId
+          description: ID of the user to be updated
+          required: true
+          type: integer
+          format: int64
+        - in: body
+          name: body
+          description: Movie object to be updated
+          required: true
+          schema: 
+            type: string
+      responses:
+        '201': 
+          description: Successful Operation
+        '400':
+          description: Invalid movieId
+        '404':
+          description: Movie not found
+          
+    delete: 
+      tags:
+        - Movie
+      summary:
+        Delete movie by specified id
+      parameters:
+        - in: path
+          name: movieId
+          description: ID of the movie to be deleted
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200': 
+          description: Successful Operation
+        '400':
+          description: Invalid movieId
+        '404':
+          description: Movie not found
