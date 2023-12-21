@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Harry",
+        "email": "harry@123.com",
+        "password": "Harry1234"
+    },
+    {
+        "name": "John",
+        "email": "john@123.com",
+        "password": "John1234"
+    },
+    {
+        "name": "Lisa",
+        "email": "lisa@123.com",
+        "password": "Lisa1234"
+    },
+    {
+        "name": "Garry",
+        "email": "garry@123.com",
+        "password": "Garry1234"
+    },
+    {
+        "name": "Khun",
+        "email": "khun@123.com",
+        "password": "Khun1234"
+    },
+    {
+        "name": "Smith",
+        "email": "smith@intanuay.com",
+        "password": "Smith1234"
+    },
+    {
+        "name": "Aren",
+        "email": "Aren@intanuay.com",
+        "password": "Aren1234"
+    }
+]
